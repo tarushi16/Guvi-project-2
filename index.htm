@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Sneakers</div>
+        <nav>
+            <ul>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart" onclick="toggleCart()">
+            <img src="images\cart icon.jpeg" alt="Cart Icon">
+            <span id="cart-count">0</span>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h3>Cart</h3>
+                <ul id="cart-items">
+                    <li>Your cart is empty.</li>
+                </ul>
+                <div class="cart-total">
+                    <span>Total: $<span id="cart-total">0.00</span></span>
+                </div>
+                <button class="checkout-button">Checkout</button>
+            </div>
+        </div>
+    </header>
+    
+
+    <main>
+        <div class="product">
+            <div class="product-image">
+                <img id="main-image" src="images\image-product-1.jpg" alt="Sneaker" onclick="zoomImage(this)">
+                <div class="image-thumbnails">
+                    <img src="images\image-product-2.jpg" alt="Sneaker" onclick="changeImage('sneaker1.jpg')">
+                    <img src="images\image-product-3.jpg" alt="Sneaker" onclick="changeImage('sneaker2.jpg')">
+                    <img src="images\image-product-4.jpg" alt="Sneaker" onclick="changeImage('sneaker3.jpg')">
+                    <img src="images\image-product-1.jpg" alt="Sneaker" onclick="changeImage('sneaker4.jpg')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h2>Fall Limited Edition Sneakers</h2>
+                <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+                <span class="price">$125.00</span>
+                <span class="discounted-price">$250.00</span>
+                <div class="quantity">
+                    <button onclick="decreaseQuantity()">-</button>
+                    <input type="text" id="quantity" value="1">
+                    <button onclick="increaseQuantity()">+</button>
+                </div>
+                <button class="add-to-cart">Add to cart</button>
+            </div>
+        </div>
+
+        <!-- Full-Screen Image Overlay -->
+        <div id="zoomed-image" class="zoomed-image" onclick="closeZoom()">
+            <img src="" id="zoomed-img" alt="Zoomed Sneaker">
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
